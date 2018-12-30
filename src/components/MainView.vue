@@ -37,11 +37,11 @@ import { Component, Prop, Vue } from "vue-property-decorator";
 
 @Component
 export default class MainView extends Vue {
-  @Prop() private msg!: string;
-  hasGeo: boolean;
-  position: Position = null;
+  // @Prop() private msg!: string;
+  hasGeo: boolean = false;
+  position: Position | null = null;
   history: Position[] = [];
-  coords: Coords;
+  coords: Coords | null = null;
   created() {
     if (navigator.geolocation) {
       this.hasGeo = true;
